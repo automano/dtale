@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import serverStateManagement from '../dtale/serverStateManagement';
+import * as serverState from '../dtale/serverStateManagement';
 
 export function init() {
   return (dispatch) => dispatch({ type: 'init-params' });
@@ -91,7 +91,7 @@ export function updateFilteredRanges(query) {
     const currQuery = _.get(state, 'filteredRanges.query', '');
     if (currQuery !== query) {
       const callback = (ranges) => dispatch({ type: 'update-filtered-ranges', ranges });
-      serverStateManagement.loadFilteredRanges(state.dataId, callback);
+      serverState.loadFilteredRanges(state.dataId, callback);
     }
   };
 }

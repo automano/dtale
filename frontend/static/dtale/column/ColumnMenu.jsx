@@ -12,7 +12,7 @@ import { buildURLString } from '../../actions/url-utils';
 import ColumnFilter from '../../filters/ColumnFilter';
 import * as gu from '../gridUtils';
 import menuFuncs from '../menu/dataViewerMenuUtils';
-import serverState from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 import ColumnMenuHeader from './ColumnMenuHeader';
 import ColumnMenuOption from './ColumnMenuOption';
 import HeatMapOption from './HeatMapOption';
@@ -92,17 +92,15 @@ class ReactColumnMenu extends React.Component {
         formattingOpen: true,
         selectedCols: [selectedCol],
       });
-    const hideCol = () => {
-      const hideCallback = () => {
-        const updatedColumns = _.map(this.props.columns, (c) =>
-          _.assignIn({}, c, c.name === selectedCol ? { visible: !c.visible } : {}),
-        );
-        this.props.propagateState({
-          columns: updatedColumns,
-          triggerResize: true,
-        });
-      };
-      serverState.toggleVisibility(dataId, selectedCol, hideCallback);
+    const hideCol = async () => {
+      await serverState.toggleVisibility(dataId, selectedCol);
+      const updatedColumns = _.map(this.props.columns, (c) =>
+        _.assignIn({}, c, c.name === selectedCol ? { visible: !c.visible } : {}),
+      );
+      this.props.propagateState({
+        columns: updatedColumns,
+        triggerResize: true,
+      });
     };
     const deleteCol = () => {
       const yesAction = () =>

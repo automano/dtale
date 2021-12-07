@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import Select, { createFilter } from 'react-select';
 
 import * as gu from '../../dtale/gridUtils';
-import serverState from '../../dtale/serverStateManagement';
+import * as serverState from '../../dtale/serverStateManagement';
 import DraggableModalDialog from '../DraggableModalDialog';
 import DateFormatting from './DateFormatting';
 import NumericFormatting from './NumericFormatting';

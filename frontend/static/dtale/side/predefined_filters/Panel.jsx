@@ -8,7 +8,7 @@ import { RemovableError } from '../../../RemovableError';
 import { updateSettings } from '../../../actions/settings';
 import { dtypesUrl } from '../../../actions/url-utils';
 import { fetchJson } from '../../../fetcher';
-import serverStateManagement from '../../serverStateManagement';
+import * as serverState from '../../serverStateManagement';
 import FilterInput from './FilterInput';
 
 require('./Panel.css');
@@ -49,7 +49,7 @@ class ReactPanel extends React.Component {
       filterValues[name] = { active };
     }
     const settings = { predefinedFilters: filterValues };
-    serverStateManagement.updateSettings(settings, dataId, () => updateSettings(settings));
+    serverState.updateSettings(settings, dataId, () => updateSettings(settings));
   }
 
   clearAll() {
@@ -60,7 +60,7 @@ class ReactPanel extends React.Component {
         active: false,
       })),
     };
-    serverStateManagement.updateSettings(settings, dataId, () => updateSettings(settings));
+    serverState.updateSettings(settings, dataId, () => updateSettings(settings));
   }
 
   render() {

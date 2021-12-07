@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import { RemovableError } from '../RemovableError';
 import { closeChart } from '../actions/charts';
-import serverState from '../dtale/serverStateManagement';
+import * as serverState from '../dtale/serverStateManagement';
 
 require('./Confirmation.css');
 

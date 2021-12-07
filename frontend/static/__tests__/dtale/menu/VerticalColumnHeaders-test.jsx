@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { describe, expect, it } from '@jest/globals';
 
 import { VerticalColumnHeaders } from '../../../dtale/menu/VerticalColumnHeaders';
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import reduxUtils from '../../redux-test-utils';
 import { buildInnerHTML } from '../../test-utils';
 

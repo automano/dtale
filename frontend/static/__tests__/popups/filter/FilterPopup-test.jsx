@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Bouncer } from '../../../Bouncer';
 import { RemovableError } from '../../../RemovableError';
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import { ReactFilterPopup } from '../../../popups/filter/FilterPopup';
 import StructuredFilters from '../../../popups/filter/StructuredFilters';
 import * as filterUtils from '../../../popups/filter/filterUtils';

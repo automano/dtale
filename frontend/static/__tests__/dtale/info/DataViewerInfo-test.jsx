@@ -8,7 +8,7 @@ import mockPopsicle from '../../MockPopsicle';
 import reduxUtils from '../../redux-test-utils';
 import { buildInnerHTML, tickUpdate } from '../../test-utils';
 import * as fetcher from '../../../fetcher';
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 
 describe('DataViewerInfo tests', () => {
   let DataViewerInfo, store, props, postSpy, updateSettingsSpy;

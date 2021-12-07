@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../../actions/dtale';
 import { SingleTrack, StyledSlider, Thumb } from '../../sliderUtils';
-import serverStateManagement from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 import { MenuItem } from './MenuItem';
 
 class ReactMaxDimensionOption extends React.Component {
@@ -24,7 +24,7 @@ class ReactMaxDimensionOption extends React.Component {
 
   updateMax(value) {
     const callback = () => this.props.updateMaxDimension(value);
-    this.setState({ currMaxDimension: value }, () => serverStateManagement.updateMaxColumnWidth(value, callback));
+    this.setState({ currMaxDimension: value }, () => serverState.updateMaxColumnWidth(value, callback));
   }
 
   render() {
@@ -34,7 +34,7 @@ class ReactMaxDimensionOption extends React.Component {
       if (this.props.maxDimension === null) {
         this.updateMax(this.state.currMaxDimension);
       } else {
-        serverStateManagement.updateMaxColumnWidth('', this.props.clearMaxDimension);
+        serverState.updateMaxColumnWidth('', this.props.clearMaxDimension);
       }
     };
     return (

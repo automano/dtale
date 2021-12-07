@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import * as gu from '../gridUtils';
-import serverState from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 
 export function onKeyDown(e, colCfg, rowIndex, value, origValue, props) {
   if (e.key === 'Enter') {

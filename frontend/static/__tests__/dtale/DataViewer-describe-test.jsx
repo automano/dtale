@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import DimensionsHelper from '../DimensionsHelper';
 import mockPopsicle from '../MockPopsicle';
 import reduxUtils from '../redux-test-utils';
+import * as GenericRepository from '../../repository/GenericRepository';
 import { buildInnerHTML, mockChartJS, tick, tickUpdate } from '../test-utils';
 
 describe('DataViewer tests', () => {
@@ -39,9 +40,8 @@ describe('DataViewer tests', () => {
   });
 
   beforeEach(async () => {
-    const fetcher = require('../../fetcher');
-    postSpy = jest.spyOn(fetcher, 'fetchPost');
-    postSpy.mockImplementation((_url, _params, callback) => callback());
+    postSpy = jest.spyOn(GenericRepository, 'postDataToService');
+    postSpy.mockResolvedValue(Promise.resolve({ data: {} }));
     const props = { dataId: '1', chartData: { visible: true } };
     const store = reduxUtils.createDtaleStore();
     buildInnerHTML({ settings: '' }, store);
@@ -143,7 +143,7 @@ describe('DataViewer tests', () => {
     dtypesGrid(result).find('div.headerCell').at(1).find('i.ico-check-box-outline-blank').simulate('click');
     dtypesGrid(result).find('i.ico-check-box').last().simulate('click');
     result.find('div.modal-footer').first().find('button').first().simulate('click');
-    result.update();
+    await tickUpdate(result);
     expect(postSpy).toBeCalledTimes(1);
     const firstPostCall = postSpy.mock.calls[0];
     expect(firstPostCall[0]).toBe('/dtale/update-visibility/1');

@@ -7,7 +7,7 @@ import reactCSS from 'reactcss';
 import { SketchPicker } from 'react-color';
 
 import ColumnSelect from './create/ColumnSelect';
-import serverState from '../dtale/serverStateManagement';
+import * as serverState from '../dtale/serverStateManagement';
 
 export const BASE_COLOR = {
   r: '255',

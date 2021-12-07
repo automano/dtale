@@ -4,7 +4,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import { updateSettings } from '../../actions/settings';
-import serverStateManagement from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 import { MenuItem } from './MenuItem';
 
 class ReactVerticalColumnHeaders extends React.Component {
@@ -19,7 +19,7 @@ class ReactVerticalColumnHeaders extends React.Component {
     const updates = { verticalHeaders: !verticalHeaders };
     const settings = { ...this.props.settings, ...updates };
     const callback = () => setVerticalHeaders(settings);
-    serverStateManagement.updateSettings(updates, dataId, callback);
+    serverState.updateSettings(updates, dataId, callback);
   }
 
   render() {

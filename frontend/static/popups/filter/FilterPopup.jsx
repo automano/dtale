@@ -9,7 +9,7 @@ import { RemovableError } from '../../RemovableError';
 import { closeChart } from '../../actions/charts';
 import { setQueryEngine } from '../../actions/dtale';
 import { updateSettings } from '../../actions/settings';
-import serverState from '../../dtale/serverStateManagement';
+import * as serverState from '../../dtale/serverStateManagement';
 import ContextVariables from './ContextVariables';
 import PandasQueryHelp from './PandasQueryHelp';
 import QueryExamples from './QueryExamples';

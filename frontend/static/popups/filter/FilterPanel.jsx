@@ -8,7 +8,7 @@ import { Bouncer } from '../../Bouncer';
 import { RemovableError } from '../../RemovableError';
 import { setQueryEngine } from '../../actions/dtale';
 import { updateSettings } from '../../actions/settings';
-import serverState from '../../dtale/serverStateManagement';
+import * as serverState from '../../dtale/serverStateManagement';
 import { SidePanelButtons } from '../../dtale/side/SidePanelButtons';
 import ContextVariables from './ContextVariables';
 import PandasQueryHelp from './PandasQueryHelp';

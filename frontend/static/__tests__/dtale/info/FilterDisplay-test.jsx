@@ -2,7 +2,7 @@ import { shallow } from 'enzyme';
 import React from 'react';
 
 import { ReactFilterDisplay } from '../../../dtale/info/FilterDisplay';
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import * as menuUtils from '../../../menuUtils';
 
 describe('FilterDisplay', () => {

@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { describe, expect, it } from '@jest/globals';
 
 import { MaxWidthOption, ReactMaxDimensionOption } from '../../../dtale/menu/MaxDimensionOption';
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import { StyledSlider } from '../../../sliderUtils';
 import reduxUtils from '../../redux-test-utils';
 import { buildInnerHTML } from '../../test-utils';

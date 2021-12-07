@@ -24,7 +24,7 @@ describe('DataViewer highlighting tests', () => {
     DataViewer = dv.DataViewer;
     ReactDataViewer = dv.ReactDataViewer;
     RangeHighlight = require('../../popups/RangeHighlight').RangeHighlight;
-    const serverState = require('../../dtale/serverStateManagement').default;
+    const serverState = require('../../dtale/serverStateManagement');
     saveRangeHighlightsSpy = jest.spyOn(serverState, 'saveRangeHighlights');
     saveRangeHighlightsSpy.mockImplementation(() => undefined);
   });

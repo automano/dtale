@@ -5,7 +5,7 @@ import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 
 import * as actions from '../../actions/dtale';
-import serverStateManagement from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 import { MenuItem } from './MenuItem';
 
 class ReactLanguageOption extends React.Component {
@@ -16,7 +16,7 @@ class ReactLanguageOption extends React.Component {
   render() {
     const { setLanguage, language, ribbonWrapper, t, i18n } = this.props;
     const updateLanguage = (newLanguage) => () =>
-      serverStateManagement.updateLanguage(newLanguage, () => {
+      serverState.updateLanguage(newLanguage, () => {
         setLanguage(newLanguage);
         i18n.changeLanguage(newLanguage);
       });

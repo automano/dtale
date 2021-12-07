@@ -3,7 +3,7 @@ import _ from 'lodash';
 import React from 'react';
 import Table from 'react-virtualized/dist/commonjs/Table/Table';
 
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import { ReactCorrelationAnalysis } from '../../../dtale/side/CorrelationAnalysis';
 import * as fetcher from '../../../fetcher';
 import { StyledSlider } from '../../../sliderUtils';

@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import serverState from '../../../dtale/serverStateManagement';
+import * as serverState from '../../../dtale/serverStateManagement';
 import FilterInput from '../../../dtale/side/predefined_filters/FilterInput';
 import { ReactPanel as PredefinedFilters } from '../../../dtale/side/predefined_filters/Panel';
 import * as fetcher from '../../../fetcher';

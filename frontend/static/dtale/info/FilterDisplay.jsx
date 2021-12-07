@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import { updateSettings } from '../../actions/settings';
 import * as gu from '../gridUtils';
-import serverState from '../serverStateManagement';
+import * as serverState from '../serverStateManagement';
 import { buildMenuHandler, predefinedFilterStr } from './infoUtils';
 
 const removeBackticks = (query) => query.replace(/`/g, '');

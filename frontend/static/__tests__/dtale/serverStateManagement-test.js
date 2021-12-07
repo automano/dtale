@@ -1,6 +1,6 @@
 import * as fetcher from '../../fetcher';
 
-import serverStateManagement from '../../dtale/serverStateManagement';
+import * as serverState from '../../dtale/serverStateManagement';
 
 describe('serverstateManagement', () => {
   let fetchJsonSpy;
@@ -16,17 +16,17 @@ describe('serverstateManagement', () => {
   afterAll(jest.restoreAllMocks);
 
   it('updatePinMenu calls right URL', () => {
-    serverStateManagement.updatePinMenu(true, callback);
+    serverState.updatePinMenu(true, callback);
     expect(fetchJsonSpy).toHaveBeenLastCalledWith('/dtale/update-pin-menu?pinned=true', callback);
   });
 
   it('updateLanguage calls right URL', () => {
-    serverStateManagement.updateLanguage('cn', callback);
+    serverState.updateLanguage('cn', callback);
     expect(fetchJsonSpy).toHaveBeenLastCalledWith('/dtale/update-language?language=cn', callback);
   });
 
   it('updateMaxColumnWidth calls right URL', () => {
-    serverStateManagement.updateMaxColumnWidth(100, callback);
+    serverState.updateMaxColumnWidth(100, callback);
     expect(fetchJsonSpy).toHaveBeenLastCalledWith('/dtale/update-maximum-column-width?width=100', callback);
   });
 });
